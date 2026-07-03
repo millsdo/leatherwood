@@ -73,7 +73,7 @@
 <section id="donors" class="band alt">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit B</span>Who actually pays him</h2>
-    <p class="lede">His career donor roster: 115 PACs and special interests against 80 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons.</p>
+    <p class="lede">His career donor roster: 115 PACs and special interests against 80 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons. And even the individual money isn't local: <strong>74% of it comes from outside District 99.</strong> His constituents &mdash; Arlington, Lakeland, Millington &mdash; account for $10,500 across his entire career, under 4 cents of every dollar raised.</p>
     <div class="two-col">
       <div>
         <h3 class="mono-h">Top special interests, career</h3>
@@ -106,6 +106,12 @@
         <option>Politician</option>
         <option>Individual</option>
       </select>
+      <select id="fDistrict" aria-label="Filter individuals by district status">
+        <option value="">All locations</option>
+        <option>In District</option>
+        <option>District Edge</option>
+        <option>Out of District</option>
+      </select>
       <span class="count mono" id="count"></span>
     </div>
     <div class="table-scroll">
@@ -137,7 +143,7 @@
 <section id="people" class="band">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit E</span>The eight people</h2>
-    <p class="lede">Over the last two election cycles, exactly eight individual human beings gave Tom Leatherwood money &mdash; $6,300 against $75,820 from special interests. Five of the nine checks arrived in a single week in January 2024. Here they are.</p>
+    <p class="lede">Over the last two election cycles, exactly eight individual human beings gave Tom Leatherwood money &mdash; $6,300 against $75,820 from special interests. Five of the nine checks arrived in a single week in January 2024. Only three of the eight live in his district. Here they are.</p>
     <div class="people-grid" id="peopleGrid"></div>
     <p class="kicker">Since October 2024: <strong>zero individual donations.</strong> His neighbors stopped. The PACs didn't.</p>
   </div>
@@ -149,6 +155,7 @@
     <div class="method">
       <p><strong>Source data.</strong> Every figure on this site comes from Tom Leatherwood's campaign financial disclosure reports filed with the Tennessee Registry of Election Finance (committee ID 7320), exported directly from the state's public database at <a href="https://apps.tn.gov/tncamp/" rel="noopener">apps.tn.gov/tncamp</a>. Thirty reports, covering 3rd Quarter 2018 through 1st Quarter 2026. The ledger reconciles: every report's ending balance matches the next report's beginning balance, and the career math closes to the penny.</p>
       <p><strong>Classification.</strong> Contributions are bucketed using TREF's own contributor flags from the filings: "P" designates a PAC, "C" designates a candidate committee. Business entities without a flag (LLCs, corporations, funds) are grouped with special interests. Campaign committees and sitting elected officials donating personally are grouped with politicians. Everyone else is an individual. All 390 checks are listed above so any single classification can be checked.</p>
+      <p><strong>District status.</strong> Individual donors are matched to House District 99 by ZIP code from their own filing entries. "In District" is 38002 (Arlington/Lakeland), 38053 and 38054 (Millington), and 38014 (Brunswick). "District Edge" ZIPs (38016, 38028, 38133, 38135) are split by the district boundary and would require street-level verification. Everyone else is "Out of District." PACs and committees are not geo-labeled &mdash; their addresses are lobbying offices, not voters.</p>
       <p><strong>Election cycles.</strong> TREF assigns each report to an election cycle; supplemental reports filed in odd years belong to the following election's cycle. "2026 cycle" means all filings the Registry assigns to the 2026 election: the 2025 supplementals and 2026 quarterlies filed to date.</p>
       <p><strong>Corrections.</strong> Found an error? Every claim traces to a specific filing. Pull the report, check the math, and if something's wrong, it gets fixed.</p>
     </div>

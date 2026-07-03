@@ -124,6 +124,8 @@ a{color:var(--ink)}
 .tag.pac{color:var(--stamp)}
 .tag.pol{color:#8a5a00}
 .tag.ppl{color:var(--money)}
+.tag.ood{color:var(--stamp);background:#FDEBEA}
+.person.ood{border-top-color:var(--stamp)}
 
 /* people */
 .people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:24px}

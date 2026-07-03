@@ -92,9 +92,10 @@ Chart.defaults.color=INK;
 
   function render(){
     const q = $('#q').value.trim().toLowerCase();
-    const fc = $('#fCycle').value, fb = $('#fBucket').value;
+    const fc = $('#fCycle').value, fb = $('#fBucket').value, fd = $('#fDistrict').value;
     let rows = DATA.contributions.filter(c =>
       (!fc || c.cycle===fc) && (!fb || c.bucket===fb) &&
+      (!fd || c.district===fd) &&
       (!q || (c.name+' '+c.city+' '+c.occ+' '+c.emp).toLowerCase().includes(q)));
     rows.sort((a,b)=>{
       let A=a[sortK],B=b[sortK];
@@ -107,11 +108,11 @@ Chart.defaults.color=INK;
       <td class="mono">${c.date}</td>
       <td><strong>${c.name}</strong>${c.occ?`<br><span style="font-size:12px;color:#3E4A6B">${c.occ}${c.emp?' · '+c.emp:''}</span>`:''}</td>
       <td><span class="tag ${tagCls(c.bucket)}">${c.bucket.replace(' / Special Interest','')}</span></td>
-      <td>${c.city}${c.state && c.state!=='TN' ? ', <strong>'+c.state+'</strong>':''}</td>
+      <td>${c.city}${c.state && c.state!=='TN' ? ', <strong>'+c.state+'</strong>':''}${c.district ? `<br><span class="tag ${c.district==='In District'?'ppl':(c.district==='District Edge'?'pol':'ood')}">${c.district}</span>`:''}</td>
       <td style="font-size:12.5px">${c.report}</td>
       <td class="num">${fmt(c.amt)}</td></tr>`).join('');
   }
-  ['#q','#fCycle','#fBucket'].forEach(s=>$(s).addEventListener('input',render));
+  ['#q','#fCycle','#fBucket','#fDistrict'].forEach(s=>$(s).addEventListener('input',render));
   document.querySelectorAll('#tbl th').forEach(th=>th.addEventListener('click',()=>{
     const k=th.dataset.k; if(!k)return;
     if(sortK===k) sortDir*=-1; else {sortK=k; sortDir = k==='amt'?-1:1;}
@@ -158,18 +159,19 @@ Chart.defaults.color=INK;
 /* ---- Exhibit E: the eight people ---- */
 (() => {
   const people = [
-    {nm:'Wade Lawson',amt:1800,who:'Civil engineer · Memphis',dt:'Jan 6, 2024'},
-    {nm:'Gerald Lawson',amt:1800,who:'Attorney · Memphis',dt:'Jan 6, 2024'},
-    {nm:'Glen Bascom',amt:1000,who:'Real estate broker · Arlington',dt:'Jan 6, 2024'},
-    {nm:'Bob Wilson',amt:500,who:'Logistics company CEO · Arlington',dt:'Jan 6, 2024'},
-    {nm:'Brittany Chandler',amt:500,who:'Co-owner, Medicaid-funded behavioral health company · Collierville',dt:'Aug 28, 2024'},
-    {nm:'Aaron Tatum',amt:350,who:'Author · Memphis',dt:'2023–2024'},
-    {nm:'Ed Haley',amt:200,who:'City manager · Millington',dt:'Jan 6, 2024'},
-    {nm:'Jina Sanders',amt:150,who:'Home executive · Germantown',dt:'Oct 13, 2024'},
+    {nm:'Wade Lawson',amt:1800,who:'Civil engineer · Memphis',dt:'Jan 6, 2024',d:'Out of District'},
+    {nm:'Gerald Lawson',amt:1800,who:'Attorney · Memphis',dt:'Jan 6, 2024',d:'Out of District'},
+    {nm:'Glen Bascom',amt:1000,who:'Real estate broker · Arlington',dt:'Jan 6, 2024',d:'In District'},
+    {nm:'Bob Wilson',amt:500,who:'Logistics company CEO · Arlington',dt:'Jan 6, 2024',d:'In District'},
+    {nm:'Brittany Chandler',amt:500,who:'Co-owner, Medicaid-funded behavioral health company · Collierville',dt:'Aug 28, 2024',d:'Out of District'},
+    {nm:'Aaron Tatum',amt:350,who:'Author · Memphis',dt:'2023–2024',d:'Out of District'},
+    {nm:'Ed Haley',amt:200,who:'City manager · Millington',dt:'Jan 6, 2024',d:'In District'},
+    {nm:'Jina Sanders',amt:150,who:'Home executive · Germantown',dt:'Oct 13, 2024',d:'Out of District'},
   ];
-  $('#peopleGrid').innerHTML = people.map(p=>`<div class="person">
+  $('#peopleGrid').innerHTML = people.map(p=>`<div class="person${p.d==='Out of District'?' ood':''}">
     <div class="nm">${p.nm}</div>
     <div class="amt">${fmt(p.amt)}</div>
     <div class="who">${p.who}<br><span class="mono" style="font-size:11.5px">${p.dt}</span></div>
+    <span class="tag ${p.d==='In District'?'ppl':'ood'}" style="margin-top:8px;display:inline-block">${p.d}</span>
   </div>`).join('');
 })();
