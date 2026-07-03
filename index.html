@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Leatherwood Ledger — Every Dollar, Every Filing, 2018–2026</title>
+<meta name="description" content="Every campaign finance filing Tom Leatherwood has ever submitted to the Tennessee Registry of Election Finance, itemized. See who funds him.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">A public records project &middot; Tennessee Registry of Election Finance &middot; Committee ID 7320</p>
+    <h1>The Leatherwood Ledger</h1>
+    <p class="dek">Every dollar in and out of Rep. Tom Leatherwood's campaign account, from his first filing in 2018 to his latest in 2026. Thirty reports. 390 itemized checks. All of it public record, none of it a secret &mdash; just never in one place until now.</p>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h2 class="thesis">In the 2026 election cycle, <span class="stamp-inline">100%</span> of Tom Leatherwood's campaign money came from PACs and special interests.</h2>
+      <p>Not most of it. All of it. $26,170.20 raised for this election &mdash; and not one dollar from an individual human being. Below is his actual donor receipt, straight from his own filings.</p>
+      <ul class="stat-strip">
+        <li><span class="fig" id="stat-career">$280,507.66</span><span class="lab">raised, career (2018&ndash;2026)</span></li>
+        <li><span class="fig">72.9%</span><span class="lab">from PACs &amp; special interests, career</span></li>
+        <li><span class="fig">$92,602.66</span><span class="lab">war chest as of his latest filing</span></li>
+        <li><span class="fig">~4&cent;</span><span class="lab">of every dollar from District 99 residents</span></li>
+      </ul>
+    </div>
+    <div class="receipt" id="receipt" aria-label="Itemized receipt of top special interest donors">
+      <div class="r-head">
+        <span>TREF FILING SUMMARY</span>
+        <span>COMMITTEE #7320</span>
+        <span>LEATHERWOOD, TOM</span>
+        <span>2024–2026 CYCLES</span>
+      </div>
+      <div class="r-rule"></div>
+      <div class="r-body" id="receipt-lines"></div>
+      <div class="r-rule"></div>
+      <div class="r-total"><span>SPECIAL INTEREST TOTAL</span><span>$75,820.20</span></div>
+      <div class="r-total sub"><span>INDIVIDUAL PEOPLE (8)</span><span>$6,300.00</span></div>
+      <div class="r-total sub"><span>PEOPLE, 2026 CYCLE</span><span>$0.00</span></div>
+      <div class="stamp" aria-hidden="true">PAID&nbsp;IN&nbsp;FULL</div>
+    </div>
+  </div>
+</section>
+
+<nav class="toc" aria-label="Sections">
+  <div class="wrap">
+    <a href="#trend">The Trend</a>
+    <a href="#donors">Who Pays Him</a>
+    <a href="#explorer">Every Check</a>
+    <a href="#ledger">The Ledger</a>
+    <a href="#people">The Eight People</a>
+    <a href="#method">Methodology</a>
+  </div>
+</nav>
+
+<section id="trend" class="band">
+  <div class="wrap">
+    <h2><span class="sec-no">Exhibit A</span>The takeover, cycle by cycle</h2>
+    <p class="lede">In 2020, when he faced a real primary challenge, 40 cents of every contribution dollar came from people. He has shed them every cycle since. This cycle, the people are gone entirely.</p>
+    <div class="chart-card"><canvas id="chartCycles"></canvas></div>
+    <div class="chart-card"><canvas id="chartShare"></canvas></div>
+  </div>
+</section>
+
+<section id="donors" class="band alt">
+  <div class="wrap">
+    <h2><span class="sec-no">Exhibit B</span>Who actually pays him</h2>
+    <p class="lede">His career donor roster: 115 PACs and special interests against 80 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons.</p>
+    <div class="two-col">
+      <div>
+        <h3 class="mono-h">Top special interests, career</h3>
+        <ol class="top-list" id="topPacs"></ol>
+      </div>
+      <div>
+        <h3 class="mono-h">Career split</h3>
+        <div class="chart-card tight"><canvas id="chartSplit"></canvas></div>
+        <table class="mini-table">
+          <tr><td>PACs &amp; special interests</td><td>$194,120.20</td><td>72.9%</td></tr>
+          <tr><td>Politicians</td><td>$10,900.00</td><td>4.1%</td></tr>
+          <tr><td>Individual people</td><td>$61,220.00</td><td>23.0%</td></tr>
+        </table>
+        <p class="note">Itemized contributions across 29 exported filings; excludes the Pre-General 2018 report's $14,125 (donor detail pending export &mdash; its known contributors were PACs and a sitting legislator, so these shares are conservative).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="explorer" class="band">
+  <div class="wrap">
+    <h2><span class="sec-no">Exhibit C</span>Every check, searchable</h2>
+    <p class="lede">All 390 itemized contributions from his filings. Search a donor, filter by cycle or source type. Every row traces to a TREF report anyone can pull.</p>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search donors, cities, employers&hellip;" aria-label="Search contributions">
+      <select id="fCycle" aria-label="Filter by cycle"><option value="">All cycles</option></select>
+      <select id="fBucket" aria-label="Filter by source type">
+        <option value="">All sources</option>
+        <option>PAC / Special Interest</option>
+        <option>Politician</option>
+        <option>Individual</option>
+      </select>
+      <span class="count mono" id="count"></span>
+    </div>
+    <div class="table-scroll">
+      <table class="ledger-table" id="tbl">
+        <thead><tr>
+          <th data-k="date">Date</th><th data-k="name">Contributor</th><th data-k="bucket">Source</th>
+          <th data-k="city">City</th><th data-k="report">Report</th><th data-k="amt" class="num">Amount</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="ledger" class="band alt">
+  <div class="wrap">
+    <h2><span class="sec-no">Exhibit D</span>The full ledger, 2018&ndash;2026</h2>
+    <p class="lede">All thirty filings, money in and money out, reconciled end to end. His account opened at $0.00 in the fall of 2018. It peaked at $101,641.37 this January &mdash; then the 2026 spending began.</p>
+    <div class="chart-card"><canvas id="chartBalance"></canvas></div>
+    <div class="table-scroll">
+      <table class="ledger-table" id="ledgerTbl">
+        <thead><tr><th>Filing</th><th class="num">Money In</th><th class="num">Money Out</th><th class="num">Ending Balance</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="people" class="band">
+  <div class="wrap">
+    <h2><span class="sec-no">Exhibit E</span>The eight people</h2>
+    <p class="lede">Over the last two election cycles, exactly eight individual human beings gave Tom Leatherwood money &mdash; $6,300 against $75,820 from special interests. Five of the nine checks arrived in a single week in January 2024. Here they are.</p>
+    <div class="people-grid" id="peopleGrid"></div>
+    <p class="kicker">Since October 2024: <strong>zero individual donations.</strong> His neighbors stopped. The PACs didn't.</p>
+  </div>
+</section>
+
+<section id="method" class="band alt">
+  <div class="wrap">
+    <h2><span class="sec-no">Appendix</span>Methodology &amp; sources</h2>
+    <div class="method">
+      <p><strong>Source data.</strong> Every figure on this site comes from Tom Leatherwood's campaign financial disclosure reports filed with the Tennessee Registry of Election Finance (committee ID 7320), exported directly from the state's public database at <a href="https://apps.tn.gov/tncamp/" rel="noopener">apps.tn.gov/tncamp</a>. Thirty reports, covering 3rd Quarter 2018 through 1st Quarter 2026. The ledger reconciles: every report's ending balance matches the next report's beginning balance, and the career math closes to the penny.</p>
+      <p><strong>Classification.</strong> Contributions are bucketed using TREF's own contributor flags from the filings: "P" designates a PAC, "C" designates a candidate committee. Business entities without a flag (LLCs, corporations, funds) are grouped with special interests. Campaign committees and sitting elected officials donating personally are grouped with politicians. Everyone else is an individual. All 390 checks are listed above so any single classification can be checked.</p>
+      <p><strong>Election cycles.</strong> TREF assigns each report to an election cycle; supplemental reports filed in odd years belong to the following election's cycle. "2026 cycle" means all filings the Registry assigns to the 2026 election: the 2025 supplementals and 2026 quarterlies filed to date.</p>
+      <p><strong>Corrections.</strong> Found an error? Every claim traces to a specific filing. Pull the report, check the math, and if something's wrong, it gets fixed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">Compiled July 3, 2026 from public records. This site is not affiliated with any government agency.</p>
+    <p class="mono disclaimer">[PAID FOR BY — DISCLAIMER PLACEHOLDER — see README before publishing]</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: leatherwood-ledger
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
