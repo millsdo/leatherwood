@@ -135,7 +135,7 @@ new Chart($('#chartGeo'), {
     if(sortK===k) sortDir*=-1; else {sortK=k; sortDir = k==='amt'?-1:1;}
     render();
   }));
-  sortK='amt'; sortDir=-1; render();
+  sortK='date'; sortDir=-1; render();
 })();
 
 /* ---- Exhibit D: ledger + balance chart ---- */
