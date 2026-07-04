@@ -125,7 +125,7 @@ new Chart($('#chartGeo'), {
       <td class="mono">${c.date}</td>
       <td><strong>${c.name}</strong>${c.occ?`<br><span style="font-size:12px;color:#3E4A6B">${c.occ}${c.emp?' · '+c.emp:''}</span>`:''}</td>
       <td><span class="tag ${tagCls(c.bucket)}">${c.bucket.replace(' / Special Interest','')}</span></td>
-      <td>${c.city}${c.state && c.state!=='TN' ? ', <strong>'+c.state+'</strong>':''}${c.district ? `<br><span class="tag ${c.district==='In District'?'ppl':(c.district==='District Edge'?'pol':'ood')}">${c.district}</span>`:''}</td>
+      <td>${c.city}${c.state && c.state!=='TN' ? ', <strong>'+c.state+'</strong>':''}${c.district ? `<br><span class="tag ${c.district==='In District'?'ppl':'ood'}">${c.district}</span>`:''}</td>
       <td style="font-size:12.5px">${c.report}</td>
       <td class="num">${fmt(c.amt)}</td></tr>`).join('');
   }
