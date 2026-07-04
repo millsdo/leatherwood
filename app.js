@@ -187,7 +187,8 @@ new Chart($('#chartGeo'), {
   ];
   $('#peopleGrid').innerHTML = people.map(p=>`<div class="person${p.d==='Out of District'?' ood':''}">
     <div class="nm">${p.nm}</div>
-    <div class="amt">${fmt(p.amt)}</div>
+    <div class="amt${p.d==='Out of District'?' neutral':''}">${fmt(p.amt)}</div>
+    <div class="amt-scope">gave in the 2024&ndash;2026 cycles</div>
     <div class="who">${p.who}<br><span class="mono" style="font-size:11.5px">${p.dt}</span></div>
     <span class="tag ${p.d==='In District'?'ppl':'ood'}" style="margin-top:8px;display:inline-block">${p.d}</span>
   </div>`).join('');
