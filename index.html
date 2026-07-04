@@ -16,37 +16,40 @@
   <div class="wrap">
     <p class="eyebrow">A public records project &middot; Tennessee Registry of Election Finance &middot; Committee ID 7320</p>
     <h1>The Leatherwood Ledger</h1>
-    <p class="dek">Every dollar in and out of Rep. Tom Leatherwood's campaign account, from his first filing in 2018 to his latest in 2026. Thirty reports. 390 itemized checks. All of it public record, none of it a secret &mdash; just never in one place until now.</p>
+    <p class="dek">Every dollar in and out of Rep. Tom Leatherwood's campaign account, 2018&ndash;2026. All of it public record.</p>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h2 class="thesis">In his most recent filings, <span class="stamp-inline">100%</span> of Tom Leatherwood's campaign money came from PACs and special interests.</h2>
-      <p>Not most of it. All of it. $26,170.20 raised &mdash; and not one dollar from an individual human being. Below is his actual donor receipt, straight from his own filings.</p>
-      <ul class="stat-strip">
-        <li><span class="fig" id="stat-career">$280,507.66</span><span class="lab">raised, career (2018&ndash;2026)</span></li>
-        <li><span class="fig">73.3%</span><span class="lab">from PACs &amp; special interests, career</span></li>
-        <li><span class="fig">$92,602.66</span><span class="lab">war chest as of his latest filing</span></li>
-        <li><span class="fig">~4&cent;</span><span class="lab">of every dollar from District 99 residents</span></li>
-      </ul>
-    </div>
-    <div class="receipt" id="receipt" aria-label="Itemized receipt of top special interest donors">
-      <div class="r-head">
-        <span>TREF FILING SUMMARY</span>
-        <span>COMMITTEE #7320</span>
-        <span>LEATHERWOOD, TOM</span>
-        <span>JAN 2024 – MAR 2026 FILINGS</span>
+  <div class="wrap">
+    <h2 class="thesis center">His most recent filings: <span class="stamp-inline">100%</span> special interest money.</h2>
+    <div class="hero-grid">
+      <div class="geo-chart hero-pie">
+        <canvas id="chartGeo"></canvas>
+        <p class="pie-caption"><strong>95% of his money comes from outside District 99.</strong> Every itemized dollar, 2018&ndash;2026, by donor address.</p>
       </div>
-      <div class="r-rule"></div>
-      <div class="r-body" id="receipt-lines"></div>
-      <div class="r-rule"></div>
-      <div class="r-total"><span>SPECIAL INTEREST TOTAL</span><span>$75,820.20</span></div>
-      <div class="r-total sub"><span>INDIVIDUAL PEOPLE (8)</span><span>$6,300.00</span></div>
-      <div class="r-total sub"><span>PEOPLE, MOST RECENT FILINGS</span><span>$0.00</span></div>
-      <div class="stamp" aria-hidden="true">PAID&nbsp;IN&nbsp;FULL</div>
+      <div class="receipt" id="receipt" aria-label="Itemized receipt of top special interest donors">
+        <div class="r-head">
+          <span>TREF FILING SUMMARY</span>
+          <span>COMMITTEE #7320</span>
+          <span>LEATHERWOOD, TOM</span>
+          <span>MOST RECENT FILINGS</span>
+        </div>
+        <div class="r-rule"></div>
+        <div class="r-body" id="receipt-lines"></div>
+        <div class="r-rule"></div>
+        <div class="r-total"><span>SPECIAL INTEREST TOTAL</span><span>$75,820.20</span></div>
+        <div class="r-total sub"><span>INDIVIDUAL PEOPLE (8)</span><span>$6,300.00</span></div>
+        <div class="r-total sub"><span>PEOPLE, MOST RECENT FILINGS</span><span>$0.00</span></div>
+        <div class="stamp" aria-hidden="true">PAID&nbsp;IN&nbsp;FULL</div>
+      </div>
     </div>
+    <ul class="stat-strip wide">
+      <li><span class="fig">$280,507.66</span><span class="lab">raised, career (2018&ndash;2026)</span></li>
+      <li><span class="fig">73.3%</span><span class="lab">from PACs &amp; special interests, career</span></li>
+      <li><span class="fig">$92,602.66</span><span class="lab">war chest as of his latest filing</span></li>
+      <li><span class="fig">~4&cent;</span><span class="lab">of every dollar from District 99 residents</span></li>
+    </ul>
   </div>
 </section>
 
@@ -64,7 +67,7 @@
 <section id="trend" class="band">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit A</span>The takeover, cycle by cycle</h2>
-    <p class="lede">In 2020, when he faced a real primary challenge, 40 cents of every contribution dollar came from people. He has shed them every cycle since. In his most recent filings &mdash; January 2025 through March 2026 &mdash; the people are gone entirely.</p>
+    <p class="lede">Special interest share of his money, by cycle. In his most recent filings, the people are gone entirely.</p>
     <div class="chart-card"><canvas id="chartCycles"></canvas></div>
     <div class="chart-card"><canvas id="chartShare"></canvas></div>
   </div>
@@ -73,15 +76,7 @@
 <section id="donors" class="band alt">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit B</span>Who actually pays him</h2>
-    <div class="geo-hero">
-      <div class="geo-chart"><canvas id="chartGeo"></canvas></div>
-      <div class="geo-copy">
-        <p class="geo-big"><span class="stamp-inline">95%</span> of his money comes from outside District 99.</p>
-        <p>Across every filing he has ever submitted &mdash; every PAC, every business, every committee, every person &mdash; donors with addresses inside District 99 account for <strong>$12,000</strong> of the <strong>$262,110.20</strong> in itemized contributions. Everything else came from Nashville, Memphis, Germantown, Washington D.C., Las Vegas, and beyond.</p>
-        <p class="note">Itemized contributions, all source types, matched by donor address against the current district map. The gray slice is $4,130 in small gifts reported as nameless lump sums under the old rules &mdash; all of it from 2018&ndash;2022. Since Tennessee's January 2023 disclosure reforms (T.C.A. &sect; 2-10-107(g)), his filings report $0 unitemized: every donor since is on the record by name, and this page shows all of them.</p>
-      </div>
-    </div>
-    <p class="lede">His career donor roster: 116 PACs, businesses, and special interests against 78 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons. And even the individual money isn't local: <strong>80% of it comes from outside District 99.</strong> His constituents account for $10,950 across his entire career &mdash; under 4 cents of every dollar raised.</p>
+    <p class="lede">116 special interests vs. 78 people &mdash; and <strong>80% of even the people-money comes from outside District 99.</strong></p>
     <div class="two-col">
       <div>
         <h3 class="mono-h">Top special interests, career</h3>
@@ -106,7 +101,7 @@
 <section id="explorer" class="band">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit C</span>Every check, searchable</h2>
-    <p class="lede">All 390 itemized contributions from his filings. Search a donor, filter by cycle or source type. Every row traces to a TREF report anyone can pull.</p>
+    <p class="lede">All 390 itemized contributions. Search any donor. Every row traces to a filing.</p>
     <div class="controls">
       <input type="search" id="q" placeholder="Search donors, cities, employers&hellip;" aria-label="Search contributions">
       <select id="fCycle" aria-label="Filter by cycle"><option value="">All cycles</option></select>
@@ -138,7 +133,7 @@
 <section id="ledger" class="band alt">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit D</span>The full ledger, 2018&ndash;2026</h2>
-    <p class="lede">All thirty filings, money in and money out, reconciled end to end. His account opened at $0.00 in the fall of 2018. It peaked at $101,641.37 this January &mdash; then the 2026 spending began.</p>
+    <p class="lede">Thirty filings, reconciled end to end: $0.00 in 2018 to a $101,641.37 peak this January.</p>
     <div class="chart-card"><canvas id="chartBalance"></canvas></div>
     <div class="table-scroll">
       <table class="ledger-table" id="ledgerTbl">
@@ -152,7 +147,7 @@
 <section id="people" class="band">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit E</span>The eight people</h2>
-    <p class="lede">Over the last two election cycles, exactly eight individual human beings gave Tom Leatherwood money &mdash; $6,300 against $75,820 from special interests. Five of the nine checks arrived in a single week in January 2024. Only three of the eight live in his district. Here they are.</p>
+    <p class="lede">Eight people in two cycles. $6,300 vs. $75,820 from special interests. Only three live in his district.</p>
     <div class="people-grid" id="peopleGrid"></div>
     <p class="kicker">Since October 2024: <strong>zero individual donations.</strong> His neighbors stopped. The PACs didn't.</p>
   </div>

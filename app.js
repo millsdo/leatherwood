@@ -72,7 +72,7 @@ new Chart($('#chartGeo'), {
   options:{
     responsive:true, maintainAspectRatio:false,
     plugins:{
-      title:{display:true,text:'Every itemized dollar, 2018–2026, by donor address',font:{size:16,weight:'700'}},
+      title:{display:false},
       legend:{position:'bottom',labels:{font:{size:13}}},
       tooltip:{callbacks:{label:ctx=>{
         const t=266240.20;

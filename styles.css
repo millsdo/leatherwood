@@ -157,3 +157,13 @@ footer .mono{font-size:12.5px;opacity:.85}
 .geo-copy p{color:var(--ink-soft)}
 .geo-copy .geo-big{color:var(--ink)}
 @media (max-width:840px){.geo-hero{grid-template-columns:1fr}}
+
+/* visual-first hero */
+.thesis.center{text-align:center;max-width:26ch;margin:0 auto 30px}
+.hero .hero-grid{grid-template-columns:1fr 1fr;align-items:center}
+.hero-pie{background:#fff;border:1px solid var(--rule);padding:18px;min-height:420px}
+.hero-pie canvas{max-height:360px}
+.pie-caption{font-size:14px;color:var(--ink-soft);text-align:center;margin-top:10px}
+.pie-caption strong{color:var(--ink)}
+.stat-strip.wide{grid-template-columns:repeat(4,1fr);margin-top:34px;text-align:center}
+@media (max-width:840px){.stat-strip.wide{grid-template-columns:repeat(2,1fr)}}
