@@ -18,7 +18,7 @@ Chart.defaults.color=INK;
 /* ---- Exhibit A: stacked $ by cycle + PAC share line ---- */
 (() => {
   const cy = DATA.cycles;
-  const labels = cy.map(c=>c.cycle);
+  const labels = cy.map(c=>c.cycle==='2026' ? ["2025–Q1 '26",'(filed to date)'] : c.cycle);
   new Chart($('#chartCycles'), {
     type:'bar',
     data:{labels, datasets:[
@@ -52,7 +52,7 @@ Chart.defaults.color=INK;
     options:{
       responsive:true, maintainAspectRatio:false,
       plugins:{
-        title:{display:true,text:'Special interest share: 57% → 74% → 87% → 100%',font:{size:15,weight:'700'}},
+        title:{display:true,text:'Special interest share: 58% → 74% → 87% → 100% (final point: Jan 2025–Mar 2026 filings)',font:{size:15,weight:'700'}},
         legend:{display:false},
         tooltip:{callbacks:{label:ctx=>` ${ctx.raw}% PAC-funded`}}
       },
@@ -64,6 +64,23 @@ Chart.defaults.color=INK;
   });
 })();
 
+/* ---- Exhibit B: the big geography pie ---- */
+new Chart($('#chartGeo'), {
+  type:'pie',
+  data:{labels:['Outside District 99','Inside District 99','Pre-2023 nameless small gifts'],
+    datasets:[{data:[250110.20,12000,4130], backgroundColor:[STAMP,MONEY,'#A8ADA3'], borderColor:'#fff', borderWidth:3}]},
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      title:{display:true,text:'Every itemized dollar, 2018–2026, by donor address',font:{size:16,weight:'700'}},
+      legend:{position:'bottom',labels:{font:{size:13}}},
+      tooltip:{callbacks:{label:ctx=>{
+        const t=266240.20;
+        return ` ${ctx.label}: ${fmt(ctx.raw)} (${(ctx.raw/t*100).toFixed(1)}%)`;}}}
+    }
+  }
+});
+
 /* ---- Exhibit B: top PACs + career doughnut ---- */
 (() => {
   const pacs = DATA.donors.filter(d=>d.bucket==='PAC / Special Interest').slice(0,12);
@@ -71,8 +88,8 @@ Chart.defaults.color=INK;
     `<li><span class="who">${d.name}</span><span class="amt">${fmt(d.total)}</span></li>`).join('');
   new Chart($('#chartSplit'), {
     type:'doughnut',
-    data:{labels:['PACs & special interests','Politicians','Individual people'],
-      datasets:[{data:[194120.20,10900,61220], backgroundColor:[STAMP,GOLD,MONEY], borderColor:'#fff'}]},
+    data:{labels:['PACs, businesses & special interests','Politicians','Individuals — out of district','Individuals — in District 99','Individuals — unitemized (no address)'],
+      datasets:[{data:[195120.20,11100,44940,10950,4130], backgroundColor:[STAMP,GOLD,'#D97C74',MONEY,'#A8ADA3'], borderColor:'#fff'}]},
     options:{
       responsive:true, maintainAspectRatio:false, cutout:'58%',
       plugins:{legend:{position:'bottom'},

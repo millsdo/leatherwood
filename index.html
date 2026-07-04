@@ -23,11 +23,11 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h2 class="thesis">In the 2026 election cycle, <span class="stamp-inline">100%</span> of Tom Leatherwood's campaign money came from PACs and special interests.</h2>
-      <p>Not most of it. All of it. $26,170.20 raised for this election &mdash; and not one dollar from an individual human being. Below is his actual donor receipt, straight from his own filings.</p>
+      <h2 class="thesis">From January 2025 through the first quarter of 2026, <span class="stamp-inline">100%</span> of Tom Leatherwood's campaign money came from PACs and special interests.</h2>
+      <p>Not most of it. All of it. $26,170.20 raised across his five most recent quarters of fundraising &mdash; and not one dollar from an individual human being. Below is his actual donor receipt, straight from his own filings.</p>
       <ul class="stat-strip">
         <li><span class="fig" id="stat-career">$280,507.66</span><span class="lab">raised, career (2018&ndash;2026)</span></li>
-        <li><span class="fig">72.9%</span><span class="lab">from PACs &amp; special interests, career</span></li>
+        <li><span class="fig">73.3%</span><span class="lab">from PACs &amp; special interests, career</span></li>
         <li><span class="fig">$92,602.66</span><span class="lab">war chest as of his latest filing</span></li>
         <li><span class="fig">~4&cent;</span><span class="lab">of every dollar from District 99 residents</span></li>
       </ul>
@@ -37,7 +37,7 @@
         <span>TREF FILING SUMMARY</span>
         <span>COMMITTEE #7320</span>
         <span>LEATHERWOOD, TOM</span>
-        <span>2024–2026 CYCLES</span>
+        <span>JAN 2024 – MAR 2026 FILINGS</span>
       </div>
       <div class="r-rule"></div>
       <div class="r-body" id="receipt-lines"></div>
@@ -64,7 +64,7 @@
 <section id="trend" class="band">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit A</span>The takeover, cycle by cycle</h2>
-    <p class="lede">In 2020, when he faced a real primary challenge, 40 cents of every contribution dollar came from people. He has shed them every cycle since. This cycle, the people are gone entirely.</p>
+    <p class="lede">In 2020, when he faced a real primary challenge, 40 cents of every contribution dollar came from people. He has shed them every cycle since. In his most recent filings &mdash; January 2025 through March 2026 &mdash; the people are gone entirely.</p>
     <div class="chart-card"><canvas id="chartCycles"></canvas></div>
     <div class="chart-card"><canvas id="chartShare"></canvas></div>
   </div>
@@ -73,7 +73,15 @@
 <section id="donors" class="band alt">
   <div class="wrap">
     <h2><span class="sec-no">Exhibit B</span>Who actually pays him</h2>
-    <p class="lede">His career donor roster: 115 PACs and special interests against 80 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons. And even the individual money isn't local: <strong>74% of it comes from outside District 99.</strong> His constituents &mdash; Arlington, Lakeland, Millington &mdash; account for $10,500 across his entire career, under 4 cents of every dollar raised.</p>
+    <div class="geo-hero">
+      <div class="geo-chart"><canvas id="chartGeo"></canvas></div>
+      <div class="geo-copy">
+        <p class="geo-big"><span class="stamp-inline">95%</span> of his money comes from outside District 99.</p>
+        <p>Across every filing he has ever submitted &mdash; every PAC, every business, every committee, every person &mdash; donors with addresses inside District 99 account for <strong>$12,000</strong> of the <strong>$262,110.20</strong> in itemized contributions. Everything else came from Nashville, Memphis, Germantown, Washington D.C., Las Vegas, and beyond.</p>
+        <p class="note">Itemized contributions, all source types, matched by donor address against the current district map. The gray slice is $4,130 in small gifts reported as nameless lump sums under the old rules &mdash; all of it from 2018&ndash;2022. Since Tennessee's January 2023 disclosure reforms (T.C.A. &sect; 2-10-107(g)), his filings report $0 unitemized: every donor since is on the record by name, and this page shows all of them.</p>
+      </div>
+    </div>
+    <p class="lede">His career donor roster: 116 PACs, businesses, and special interests against 78 individuals &mdash; and the special interests outspend the people three to one. Healthcare leads, then alcohol, banking, highways, and private prisons. And even the individual money isn't local: <strong>80% of it comes from outside District 99.</strong> His constituents account for $10,950 across his entire career &mdash; under 4 cents of every dollar raised.</p>
     <div class="two-col">
       <div>
         <h3 class="mono-h">Top special interests, career</h3>
@@ -83,11 +91,13 @@
         <h3 class="mono-h">Career split</h3>
         <div class="chart-card tight"><canvas id="chartSplit"></canvas></div>
         <table class="mini-table">
-          <tr><td>PACs &amp; special interests</td><td>$194,120.20</td><td>72.9%</td></tr>
-          <tr><td>Politicians</td><td>$10,900.00</td><td>4.1%</td></tr>
-          <tr><td>Individual people</td><td>$61,220.00</td><td>23.0%</td></tr>
+          <tr><td>PACs, businesses &amp; special interests</td><td>$195,120.20</td><td>73.3%</td></tr>
+          <tr><td>Politicians</td><td>$11,100.00</td><td>4.2%</td></tr>
+          <tr><td>Individuals &mdash; out of district</td><td>$44,940.00</td><td>16.9%</td></tr>
+          <tr><td><strong>Individuals &mdash; in District 99</strong></td><td><strong>$10,950.00</strong></td><td><strong>4.1%</strong></td></tr>
+          <tr><td>Individuals &mdash; unitemized (no address)</td><td>$4,130.00</td><td>1.6%</td></tr>
         </table>
-        <p class="note">Itemized contributions across 29 exported filings; excludes the Pre-General 2018 report's $14,125 (donor detail pending export &mdash; its known contributors were PACs and a sitting legislator, so these shares are conservative).</p>
+        <p class="note">Itemized contributions across 29 exported filings; excludes the Pre-General 2018 report's $14,125 (donor detail pending export &mdash; its known contributors were PACs and a sitting legislator, so these shares are conservative). Every donor in a ZIP code split by the district boundary has been resolved by street-address verification against the current district map; none remain ambiguous. The unitemized row is small-dollar gifts that carry no address in the filings. In-district = ZIPs 38002, 38053, 38054, 38014.</p>
       </div>
     </div>
   </div>
@@ -155,8 +165,8 @@
     <div class="method">
       <p><strong>Source data.</strong> Every figure on this site comes from Tom Leatherwood's campaign financial disclosure reports filed with the Tennessee Registry of Election Finance (committee ID 7320), exported directly from the state's public database at <a href="https://apps.tn.gov/tncamp/" rel="noopener">apps.tn.gov/tncamp</a>. Thirty reports, covering 3rd Quarter 2018 through 1st Quarter 2026. The ledger reconciles: every report's ending balance matches the next report's beginning balance, and the career math closes to the penny.</p>
       <p><strong>Classification.</strong> Contributions are bucketed using TREF's own contributor flags from the filings: "P" designates a PAC, "C" designates a candidate committee. Business entities without a flag (LLCs, corporations, funds) are grouped with special interests. Campaign committees and sitting elected officials donating personally are grouped with politicians. Everyone else is an individual. All 390 checks are listed above so any single classification can be checked.</p>
-      <p><strong>District status.</strong> Individual donors are matched to House District 99 by ZIP code from their own filing entries. "In District" is 38002 (Arlington/Lakeland), 38053 and 38054 (Millington), and 38014 (Brunswick). "District Edge" ZIPs (38016, 38028, 38133, 38135) are split by the district boundary and would require street-level verification. Everyone else is "Out of District." PACs and committees are not geo-labeled &mdash; their addresses are lobbying offices, not voters.</p>
-      <p><strong>Election cycles.</strong> TREF assigns each report to an election cycle; supplemental reports filed in odd years belong to the following election's cycle. "2026 cycle" means all filings the Registry assigns to the 2026 election: the 2025 supplementals and 2026 quarterlies filed to date.</p>
+      <p><strong>District status.</strong> Individual donors are matched to House District 99 by ZIP code from their own filing entries. "In District" is 38002 (Arlington/Lakeland), 38053 and 38054 (Millington), and 38014 (Brunswick). Donors in ZIPs split by the district boundary (38016, 38028, 38133, 38135) were resolved individually by street address against the current district map. Everyone else is "Out of District." PACs and committees are not geo-labeled &mdash; their addresses are lobbying offices, not voters.</p>
+      <p><strong>Election cycles and the "100%" claim.</strong> TREF assigns each report to an election cycle; supplemental reports filed in odd years belong to the following election's cycle. The chart's final data point and the 100% figure cover his three most recent filings &mdash; the two 2025 supplementals and the 1st Quarter 2026 report &mdash; spanning January 1, 2025 through the end of March 2026. The 2026 cycle is still underway; this page will be updated as he files new reports, including the 2nd Quarter and Pre-Primary reports due in July 2026.</p>
       <p><strong>Corrections.</strong> Found an error? Every claim traces to a specific filing. Pull the report, check the math, and if something's wrong, it gets fixed.</p>
     </div>
   </div>
