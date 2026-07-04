@@ -167,3 +167,16 @@ footer .mono{font-size:12.5px;opacity:.85}
 .pie-caption strong{color:var(--ink)}
 .stat-strip.wide{grid-template-columns:repeat(4,1fr);margin-top:34px;text-align:center}
 @media (max-width:840px){.stat-strip.wide{grid-template-columns:repeat(2,1fr)}}
+
+/* in/out scoreboard */
+.pie-score{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.ps{text-align:center;padding:12px 8px;border:2px solid currentColor}
+.ps.out{color:var(--stamp);background:#FDF1F0}
+.ps.in{color:var(--money);background:#EFF6F1}
+.ps-fig{display:block;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:clamp(20px,2.4vw,28px);line-height:1.1}
+.ps-lab{display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;margin-top:4px}
+
+/* district-99 receipt */
+.receipt.green{transform:rotate(-.4deg);max-width:560px;margin:0 auto 28px}
+.receipt.green .r-total{color:var(--money)}
+#hometeam .kicker{text-align:center;max-width:none}
