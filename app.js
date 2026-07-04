@@ -88,8 +88,8 @@ new Chart($('#chartGeo'), {
     `<li><span class="who">${d.name}</span><span class="amt">${fmt(d.total)}</span></li>`).join('');
   new Chart($('#chartSplit'), {
     type:'doughnut',
-    data:{labels:['PACs, businesses & special interests','Politicians','Individuals — out of district','Individuals — in District 99','Individuals — unitemized (no address)'],
-      datasets:[{data:[205270.20,12450,47190,10900,4555], backgroundColor:[STAMP,GOLD,'#D97C74',MONEY,'#A8ADA3'], borderColor:'#fff'}]},
+    data:{labels:['From outside District 99','From inside District 99','Unitemized (no address)'],
+      datasets:[{data:[264360.20,11450,4555], backgroundColor:[STAMP,MONEY,'#A8ADA3'], borderColor:'#fff'}]},
     options:{
       responsive:true, maintainAspectRatio:false, cutout:'58%',
       plugins:{legend:{position:'bottom'},

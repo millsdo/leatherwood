@@ -180,3 +180,8 @@ footer .mono{font-size:12.5px;opacity:.85}
 .receipt.green{transform:rotate(-.4deg);max-width:560px;margin:0 auto 28px}
 .receipt.green .r-total{color:var(--money)}
 #hometeam .kicker{text-align:center;max-width:none}
+
+.mini-table tr.grp td{background:var(--paper-deep);border-top:2px solid var(--ink)}
+.mini-table td.sub{padding-left:22px;color:var(--ink-soft);font-size:14px}
+
+.mini-table tr.grp.in td{border-top:2px solid var(--money);color:var(--money)}
