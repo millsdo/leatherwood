@@ -59,12 +59,9 @@ parsing pipeline (or hand the export back to Claude to regenerate).
 
 ## IMPORTANT: before publishing
 
-1. **Disclaimer.** Tennessee law (T.C.A. § 2-19-120) requires "Paid for by"
-   identification on campaign communications. If this site is paid for or
-   coordinated with a candidate's committee, replace the placeholder in the
-   footer of `index.html` with the proper disclaimer (committee name and
-   treasurer) BEFORE the site goes live. Confirm the exact required wording
-   with the campaign's compliance counsel or the Registry.
+1. **Disclaimer.** The footer carries "Paid for by Committee to Elect
+   Amber Mills, Emily Elliott, Treasurer." Do not remove it. If the
+   committee name or treasurer ever changes, update it here.
 2. **Accuracy.** Every figure traces to a specific TREF filing. If you edit
    any number by hand, re-verify it against the source report first.
 3. **The Pre-General 2018 gap.** The donor explorer excludes that one
