@@ -68,7 +68,7 @@ Chart.defaults.color=INK;
 new Chart($('#chartGeo'), {
   type:'pie',
   data:{labels:['Outside District 99','Inside District 99','Pre-2023 nameless small gifts'],
-    datasets:[{data:[250110.20,12000,4130], backgroundColor:[STAMP,MONEY,'#A8ADA3'], borderColor:'#fff', borderWidth:3}]},
+    datasets:[{data:[264360.20,11450,4555], backgroundColor:[STAMP,MONEY,'#A8ADA3'], borderColor:'#fff', borderWidth:3}]},
   options:{
     responsive:true, maintainAspectRatio:false,
     plugins:{
@@ -89,7 +89,7 @@ new Chart($('#chartGeo'), {
   new Chart($('#chartSplit'), {
     type:'doughnut',
     data:{labels:['PACs, businesses & special interests','Politicians','Individuals — out of district','Individuals — in District 99','Individuals — unitemized (no address)'],
-      datasets:[{data:[195120.20,11100,44940,10950,4130], backgroundColor:[STAMP,GOLD,'#D97C74',MONEY,'#A8ADA3'], borderColor:'#fff'}]},
+      datasets:[{data:[205270.20,12450,47190,10900,4555], backgroundColor:[STAMP,GOLD,'#D97C74',MONEY,'#A8ADA3'], borderColor:'#fff'}]},
     options:{
       responsive:true, maintainAspectRatio:false, cutout:'58%',
       plugins:{legend:{position:'bottom'},
